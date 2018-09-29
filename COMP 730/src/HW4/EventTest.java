@@ -28,5 +28,4 @@ class EventTest {
     void testGetEventNumber() {
         assertEquals(testObject.getEventNumber(), testNumber);
     }
-
 }
