@@ -11,20 +11,17 @@ public class PublisherImplementation implements PublisherInterface {
     
     @Override
     public void registerObserver(Observer o) {
-        // TODO Auto-generated method stub
         observers.add(o);
     }
 
     @Override
     public void removeObserver(Observer o) {
-        // TODO Auto-generated method stub
         observers.remove(o);
         counters.remove(o);
     }
 
     @Override
     public void notifyObservers(Event e) {
-        // TODO Auto-generated method stub
         for (var observer : observers)
             if (observer.notifyObserver(e))
                 counters.put(observer, counters.getOrDefault(observer, 0) + 1);
@@ -41,8 +38,6 @@ public class PublisherImplementation implements PublisherInterface {
         registerObserver(evens);
         registerObserver(odds);
         registerObserver(threes);
-        
-        var rand = new Random();
         
         for (int i = 0; i < 200; i++) {
             notifyObservers(generateEvent());
