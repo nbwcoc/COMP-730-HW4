@@ -4,6 +4,10 @@ public class SubscriberEvens implements Observer {
 
     @Override
     public boolean notifyObserver(Event e) {
-        return e.getEventData() % 2 == 0;
+        if (e.getEventData() % 2 == 0) {
+            System.out.printf("# %d: %d is even", e.getEventNumber(), e.getEventData());
+            return true;
+        }
+        return false;
     }
 }

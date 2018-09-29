@@ -4,6 +4,10 @@ public class SubscriberOdds implements Observer {
 
     @Override
     public boolean notifyObserver(Event e) {
-        return e.getEventData() % 2 == 1;
+        if (e.getEventData() % 2 == 1) {
+            System.out.printf("# %d: #d is odd", e.getEventNumber(), e.getEventData());
+            return true;
+        }
+        return false;
     }
 }
